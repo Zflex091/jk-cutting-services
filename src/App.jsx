@@ -19,11 +19,6 @@ const services = [
     list: ["Kontrollert demontering", "Tunge elementer", "Miljøvennlig sortering"],
   },
   {
-    title: "Transport og logistikk",
-    text: "Effektiv flyt av materialer fra arbeidssted til mottak med full kontroll på tid og sikkerhet.",
-    list: ["Intern transport", "Koordinering", "Optimal lasting"],
-  },
-  {
     title: "Forberedelse for resirkulering",
     text: "Klargjøring av metall og materialer for effektiv viderebehandling og gjenvinning.",
     list: ["Kapping", "Sortering", "Redusert volum"],
