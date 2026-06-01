@@ -95,6 +95,15 @@ function Header() {
   );
 }
 
+function MobileBottomBar() {
+  return (
+    <div className="mobile-bottom-bar">
+      <a href="tel:+4792200277">Ring</a>
+      <a href="mailto:info@jkcuttingservices.no">E-post</a>
+    </div>
+  );
+}
+
 function PageHero({ label, title, text }) {
   return (
     <section className="page-hero">
