@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
 import "./App.css";
-import heroGal from "./assets/hero_gal.jpeg";
+
+import metallkutting1 from "./assets/metallkutting1.jpeg";
+import metallkutting2 from "./assets/metallkutting2.jpeg";
+import metallkutting3 from "./assets/metallkutting3.jpeg";
+import metallkutting4 from "./assets/metallkutting4.jpeg";
+import metallkutting5 from "./assets/metallkutting5.jpeg";
+import metallkutting7 from "./assets/metallkutting7.jpeg";
+import metallkutting8 from "./assets/metallkutting8.jpeg";
 
 const services = [
   {
@@ -36,24 +43,26 @@ const galleryCategories = {
     title: "Industridemontering",
     text: "Cisterner, tanker, industrielle objekter, større prosjekter og krevende demonteringsarbeid.",
     items: [
-      "Cisterner og tanker",
-      "Industrielle objekter",
-      "Større prosjekter",
-      "Demontering 04",
-      "Demontering 05",
-      "Demontering 06",
+      { title: "Cisterner og tanker" },
+      { title: "Industrielle objekter" },
+      { title: "Større prosjekter" },
+      { title: "Demontering 04" },
+      { title: "Demontering 05" },
+      { title: "Demontering 06" },
     ],
   },
+
   metallkutting: {
     title: "Metallkutting på gjenvinningsanlegg",
     text: "Metallkutting, klargjøring av konstruksjoner, arbeidsprosesser og maskiner på gjenvinningsanlegg.",
     items: [
-      "Metallkutting 01",
-      "Konstruksjoner",
-      "Gjenvinning",
-      "Arbeidsprosess",
-      "Teknikk",
-      "Metallkutting 06",
+      { title: "Metallkutting 01", image: metallkutting1 },
+      { title: "Metallkutting 02", image: metallkutting2 },
+      { title: "Metallkutting 03", image: metallkutting3 },
+      { title: "Metallkutting 04", image: metallkutting4 },
+      { title: "Metallkutting 05", image: metallkutting5 },
+      { title: "Metallkutting 07", image: metallkutting7 },
+      { title: "Metallkutting 08", image: metallkutting8 },
     ],
   },
 };
@@ -93,15 +102,6 @@ function Header() {
         Kontakt oss
       </NavLink>
     </header>
-  );
-}
-
-function MobileBottomBar() {
-  return (
-    <div className="mobile-bottom-bar">
-      <a href="tel:+4792200277">Ring</a>
-      <a href="mailto:info@jkcuttingservices.no">E-post</a>
-    </div>
   );
 }
 
@@ -147,9 +147,9 @@ function Home() {
           </div>
         </div>
 
-        <div className="hero-image">
-  <img src={heroGal} alt="JK Cutting Services" />
-</div>
+        <div className="hero-visual">
+          <ImagePlaceholder text="Hero bilde" />
+        </div>
       </section>
 
       <section className="section">
@@ -326,8 +326,12 @@ function Gallery() {
 
         <div className="gallery-grid">
           {category.items.map((item) => (
-            <div className="gallery-item" key={item}>
-              <span>{item}</span>
+            <div className="gallery-item" key={item.title}>
+              {item.image ? (
+                <img src={item.image} alt={item.title} />
+              ) : (
+                <span>{item.title}</span>
+              )}
             </div>
           ))}
         </div>
@@ -411,8 +415,6 @@ function App() {
         <Route path="/galleri" element={<Gallery />} />
         <Route path="/kontakt" element={<Contact />} />
       </Routes>
-
-      <MobileBottomBar />
     </div>
   );
 }
