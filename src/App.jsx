@@ -19,6 +19,8 @@ import img6 from "./assets/6.jpg";
 import img7 from "./assets/7.jpg";
 import img8 from "./assets/8.jpg";
 
+import heroGal from "./assets/hero gal.jpeg";
+
 const services = [
   {
     title: "Gasskjæring",
@@ -159,8 +161,12 @@ function Home() {
         </div>
 
         <div className="hero-visual">
-          <ImagePlaceholder text="Hero bilde" />
-        </div>
+  <img
+    src={heroGal}
+    alt="JK Cutting Services"
+    className="hero-image"
+  />
+</div>
       </section>
 
       <section className="section">
