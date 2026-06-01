@@ -59,7 +59,6 @@ const galleryCategories = {
 
 function Header() {
   const [open, setOpen] = useState(false);
-
   const closeMenu = () => setOpen(false);
 
   return (
@@ -79,29 +78,50 @@ function Header() {
       </button>
 
       <nav className={`nav ${open ? "show" : ""}`}>
-        <NavLink to="/Hjem" onClick={closeMenu}>Hjem</NavLink>
-        <NavLink to="/Om oss" onClick={closeMenu}>Om oss</NavLink>
-        <NavLink to="/Tjenester" onClick={closeMenu}>Tjenester</NavLink>
-        <NavLink to="/Galleri" onClick={closeMenu}>Galleri</NavLink>
-        <NavLink to="/Kontakt" onClick={closeMenu}>Kontakt</NavLink>
-        <NavLink to="/Kontakt" className="nav-cta" onClick={closeMenu}>
+        <NavLink to="/" onClick={closeMenu}>
+          Hjem
+        </NavLink>
+        <NavLink to="/om-oss" onClick={closeMenu}>
+          Om oss
+        </NavLink>
+        <NavLink to="/tjenester" onClick={closeMenu}>
+          Tjenester
+        </NavLink>
+        <NavLink to="/galleri" onClick={closeMenu}>
+          Galleri
+        </NavLink>
+        <NavLink to="/kontakt" onClick={closeMenu}>
+          Kontakt
+        </NavLink>
+        <NavLink to="/kontakt" className="nav-cta" onClick={closeMenu}>
           Kontakt oss
         </NavLink>
       </nav>
 
-      <NavLink to="/kontaktai" className="desktop-cta">
+      <NavLink to="/kontakt" className="desktop-cta">
         Kontakt oss
       </NavLink>
     </header>
   );
 }
 
+function MobileBottomBar() {
+  return (
+    <div className="mobile-bottom-bar">
+      <a href="tel:+4792200277">Ring</a>
+      <a href="mailto:info@jkcuttingservices.no">E-post</a>
+    </div>
+  );
+}
+
 function PageHero({ label, title, text }) {
   return (
     <section className="page-hero">
-      <p className="label">{label}</p>
-      <h1>{title}</h1>
-      <p>{text}</p>
+      <div className="page-hero-content">
+        <p className="label">{label}</p>
+        <h1>{title}</h1>
+        <p>{text}</p>
+      </div>
     </section>
   );
 }
@@ -119,13 +139,17 @@ function Home() {
           </p>
 
           <div className="hero-actions">
-            <NavLink to="/paslaugos" className="btn primary">Våre tjenester</NavLink>
-            <NavLink to="/galerija" className="btn ghost">Se galleri</NavLink>
+            <NavLink to="/tjenester" className="btn primary">
+              Våre tjenester
+            </NavLink>
+            <NavLink to="/galleri" className="btn ghost">
+              Se galleri
+            </NavLink>
           </div>
         </div>
 
-        <div className="hero-card">
-          <div className="photo-placeholder">Hero bilde</div>
+        <div className="hero-visual">
+          <div className="image-slot">Hero bilde</div>
         </div>
       </section>
 
@@ -150,17 +174,29 @@ function Home() {
         </div>
       </section>
 
-      <section className="section soft">
+      <section className="section soft-section">
         <div className="section-heading">
           <p className="label">Hvorfor velge oss?</p>
           <h2>Hvorfor velge JK Cutting Services AS?</h2>
         </div>
 
         <div className="benefit-grid">
-          <div><strong>Pålitelig</strong><p>Sikre løsninger og høy kvalitet.</p></div>
-          <div><strong>Effektiv</strong><p>Rask og strukturert drift.</p></div>
-          <div><strong>Erfaring</strong><p>Solid industri- og anleggserfaring.</p></div>
-          <div><strong>Hele Norge</strong><p>Tjenester over hele landet.</p></div>
+          <div>
+            <strong>Pålitelig</strong>
+            <p>Sikre løsninger og høy kvalitet.</p>
+          </div>
+          <div>
+            <strong>Effektiv</strong>
+            <p>Rask og strukturert drift.</p>
+          </div>
+          <div>
+            <strong>Erfaring</strong>
+            <p>Solid industri- og anleggserfaring.</p>
+          </div>
+          <div>
+            <strong>Hele Norge</strong>
+            <p>Tjenester over hele landet.</p>
+          </div>
         </div>
       </section>
     </main>
@@ -195,7 +231,6 @@ function About() {
               samarbeid med kundens personell.
             </p>
           </article>
-
           <article>
             <span>02</span>
             <p>
@@ -203,7 +238,6 @@ function About() {
               arbeidsmiljøer med strenge HMS-rutiner.
             </p>
           </article>
-
           <article>
             <span>03</span>
             <p>
@@ -211,7 +245,6 @@ function About() {
               klargjøring av store konstruksjoner for transport.
             </p>
           </article>
-
           <article>
             <span>04</span>
             <p>
@@ -335,16 +368,28 @@ function Contact() {
         <div className="contact-details">
           <article>
             <span>Firma</span>
-            <p><strong>JK Cutting Services AS</strong></p>
-            <p><strong>Org.nr:</strong> 931 010 689</p>
-            <p><strong>Adresse:</strong> Kilgata 16, 3217 Sandefjord</p>
+            <p>
+              <strong>JK Cutting Services AS</strong>
+            </p>
+            <p>
+              <strong>Org.nr:</strong> 931 010 689
+            </p>
+            <p>
+              <strong>Adresse:</strong> Kilgata 16, 3217 Sandefjord
+            </p>
           </article>
 
           <article>
             <span>Åpningstid</span>
-            <p><strong>Mandag–fredag:</strong> 07:00–18:00</p>
-            <p><strong>Helg:</strong> Etter avtale</p>
-            <p><strong>Område:</strong> Hele Norge</p>
+            <p>
+              <strong>Mandag–fredag:</strong> 07:00–18:00
+            </p>
+            <p>
+              <strong>Helg:</strong> Etter avtale
+            </p>
+            <p>
+              <strong>Område:</strong> Hele Norge
+            </p>
           </article>
         </div>
       </section>
@@ -358,12 +403,14 @@ function App() {
       <Header />
 
       <Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/om-oss" element={<About />} />
-  <Route path="/tjenester" element={<Services />} />
-  <Route path="/galleri" element={<Gallery />} />
-  <Route path="/kontakt" element={<Contact />} />
-</Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/om-oss" element={<About />} />
+        <Route path="/tjenester" element={<Services />} />
+        <Route path="/galleri" element={<Gallery />} />
+        <Route path="/kontakt" element={<Contact />} />
+      </Routes>
+
+      <MobileBottomBar />
     </div>
   );
 }
