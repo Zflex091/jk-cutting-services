@@ -52,19 +52,19 @@ const galleryCategories = {
     ],
   },
 
-  metallkutting: {
-    title: "Metallkutting på gjenvinningsanlegg",
-    text: "Metallkutting, klargjøring av konstruksjoner, arbeidsprosesser og maskiner på gjenvinningsanlegg.",
-    items: [
-      { title: "Metallkutting 01", image: metallkutting1 },
-      { title: "Metallkutting 02", image: metallkutting2 },
-      { title: "Metallkutting 03", image: metallkutting3 },
-      { title: "Metallkutting 04", image: metallkutting4 },
-      { title: "Metallkutting 05", image: metallkutting5 },
-      { title: "Metallkutting 07", image: metallkutting7 },
-      { title: "Metallkutting 08", image: metallkutting8 },
-    ],
-  },
+ metallkutting: {
+  title: "Metallkutting på gjenvinningsanlegg",
+  text: "Metallkutting, klargjøring av konstruksjoner, arbeidsprosesser og maskiner på gjenvinningsanlegg.",
+  items: [
+    { title: "Metallkutting 01", image: metallkutting1 },
+    { title: "Metallkutting 02", image: metallkutting2 },
+    { title: "Metallkutting 03", image: metallkutting3 },
+    { title: "Metallkutting 04", image: metallkutting4 },
+    { title: "Metallkutting 05", image: metallkutting5 },
+    { title: "Metallkutting 07", image: metallkutting7 },
+    { title: "Metallkutting 08", image: metallkutting8 },
+  ],
+},
 };
 
 function Header() {
@@ -325,16 +325,16 @@ function Gallery() {
         </div>
 
         <div className="gallery-grid">
-          {category.items.map((item) => (
-            <div className="gallery-item" key={item.title}>
-              {item.image ? (
-                <img src={item.image} alt={item.title} />
-              ) : (
-                <span>{item.title}</span>
-              )}
-            </div>
-          ))}
-        </div>
+  {category.items.map((item) => (
+    <div className="gallery-item" key={item.title}>
+      {item.image ? (
+        <img src={item.image} alt={item.title} />
+      ) : (
+        <span>{item.title}</span>
+      )}
+    </div>
+  ))}
+</div>
       </section>
     </main>
   );
