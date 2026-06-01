@@ -84,7 +84,7 @@ function Header() {
       </button>
 
       <nav className={`nav ${open ? "show" : ""}`}>
-        <NavLink to="/" onClick={closeMenu}>Home</NavLink>
+        <NavLink to="/" onClick={closeMenu}>Hjem</NavLink>
         <NavLink to="/apie-mus" onClick={closeMenu}>Om oss</NavLink>
         <NavLink to="/paslaugos" onClick={closeMenu}>Tjenester</NavLink>
         <NavLink to="/galerija" onClick={closeMenu}>Galleri</NavLink>
