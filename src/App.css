@@ -860,4 +860,43 @@ p {
     height: 205px;
     min-height: 205px;
   }
+  .hero-visual {
+  position: relative;
+  z-index: 2;
+}
+
+.image-slot {
+  height: 470px;
+  border-radius: 34px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(135deg, rgba(255, 122, 24, 0.23), rgba(255, 255, 255, 0.035)),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.05) 0,
+      rgba(255, 255, 255, 0.05) 2px,
+      transparent 2px,
+      transparent 13px
+    );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a4a7b0;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  box-shadow: 0 35px 110px rgba(0, 0, 0, 0.58);
+  animation: float 5s ease-in-out infinite;
+}
+
+@media (max-width: 760px) {
+  .image-slot {
+    width: 100%;
+    height: 225px;
+    border-radius: 24px;
+    animation: none;
+  }
+}
 }
