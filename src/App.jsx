@@ -79,12 +79,12 @@ function Header() {
       </button>
 
       <nav className={`nav ${open ? "show" : ""}`}>
-        <NavLink to="/" onClick={closeMenu}>Hjem</NavLink>
-        <NavLink to="/apie-mus" onClick={closeMenu}>Om oss</NavLink>
-        <NavLink to="/paslaugos" onClick={closeMenu}>Tjenester</NavLink>
-        <NavLink to="/galerija" onClick={closeMenu}>Galleri</NavLink>
-        <NavLink to="/kontaktai" onClick={closeMenu}>Kontakt</NavLink>
-        <NavLink to="/kontaktai" className="nav-cta" onClick={closeMenu}>
+        <NavLink to="/Hjem" onClick={closeMenu}>Hjem</NavLink>
+        <NavLink to="/Om oss" onClick={closeMenu}>Om oss</NavLink>
+        <NavLink to="/Tjenester" onClick={closeMenu}>Tjenester</NavLink>
+        <NavLink to="/Galleri" onClick={closeMenu}>Galleri</NavLink>
+        <NavLink to="/Kontakt" onClick={closeMenu}>Kontakt</NavLink>
+        <NavLink to="/Kontakt" className="nav-cta" onClick={closeMenu}>
           Kontakt oss
         </NavLink>
       </nav>
@@ -358,12 +358,12 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/apie-mus" element={<About />} />
-        <Route path="/paslaugos" element={<Services />} />
-        <Route path="/galerija" element={<Gallery />} />
-        <Route path="/kontaktai" element={<Contact />} />
-      </Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/om-oss" element={<About />} />
+  <Route path="/tjenester" element={<Services />} />
+  <Route path="/galleri" element={<Gallery />} />
+  <Route path="/kontakt" element={<Contact />} />
+</Routes>
     </div>
   );
 }
