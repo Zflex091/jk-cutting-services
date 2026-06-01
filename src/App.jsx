@@ -78,21 +78,11 @@ function Header() {
       </button>
 
       <nav className={`nav ${open ? "show" : ""}`}>
-        <NavLink to="/" onClick={closeMenu}>
-          Hjem
-        </NavLink>
-        <NavLink to="/om-oss" onClick={closeMenu}>
-          Om oss
-        </NavLink>
-        <NavLink to="/tjenester" onClick={closeMenu}>
-          Tjenester
-        </NavLink>
-        <NavLink to="/galleri" onClick={closeMenu}>
-          Galleri
-        </NavLink>
-        <NavLink to="/kontakt" onClick={closeMenu}>
-          Kontakt
-        </NavLink>
+        <NavLink to="/" onClick={closeMenu}>Hjem</NavLink>
+        <NavLink to="/om-oss" onClick={closeMenu}>Om oss</NavLink>
+        <NavLink to="/tjenester" onClick={closeMenu}>Tjenester</NavLink>
+        <NavLink to="/galleri" onClick={closeMenu}>Galleri</NavLink>
+        <NavLink to="/kontakt" onClick={closeMenu}>Kontakt</NavLink>
         <NavLink to="/kontakt" className="nav-cta" onClick={closeMenu}>
           Kontakt oss
         </NavLink>
@@ -126,6 +116,14 @@ function PageHero({ label, title, text }) {
   );
 }
 
+function ImagePlaceholder({ text = "Bildeplass" }) {
+  return (
+    <div className="image-slot">
+      <span>{text}</span>
+    </div>
+  );
+}
+
 function Home() {
   return (
     <main>
@@ -149,7 +147,7 @@ function Home() {
         </div>
 
         <div className="hero-visual">
-          <div className="image-slot">Hero bilde</div>
+          <ImagePlaceholder text="Hero bilde" />
         </div>
       </section>
 
@@ -231,6 +229,7 @@ function About() {
               samarbeid med kundens personell.
             </p>
           </article>
+
           <article>
             <span>02</span>
             <p>
@@ -238,6 +237,7 @@ function About() {
               arbeidsmiljøer med strenge HMS-rutiner.
             </p>
           </article>
+
           <article>
             <span>03</span>
             <p>
@@ -245,6 +245,7 @@ function About() {
               klargjøring av store konstruksjoner for transport.
             </p>
           </article>
+
           <article>
             <span>04</span>
             <p>
