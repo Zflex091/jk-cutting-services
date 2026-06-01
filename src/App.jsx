@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
 import "./App.css";
 
-import metallkutting1 from "./assets/metallkutting1.jpeg";
-import metallkutting2 from "./assets/metallkutting2.jpeg";
-import metallkutting3 from "./assets/metallkutting3.jpeg";
-import metallkutting4 from "./assets/metallkutting4.jpeg";
-import metallkutting5 from "./assets/metallkutting5.jpeg";
-import metallkutting7 from "./assets/metallkutting7.jpeg";
-import metallkutting8 from "./assets/metallkutting8.jpeg";
+import metallkutting1 from "./assets/metalkutting1.jpeg";
+import metallkutting2 from "./assets/metallkuting2.jpeg";
+import metallkutting3 from "./assets/metallkuting3.jpeg";
+import metallkutting4 from "./assets/metalkutting4.jpeg";
+import metallkutting5 from "./assets/metalkutting5.jpeg";
+import metallkutting7 from "./assets/metallkuting7.jpeg";
+import metallkutting8 from "./assets/metalkutting8.jpeg";
 
 const services = [
   {
