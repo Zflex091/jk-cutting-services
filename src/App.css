@@ -756,11 +756,14 @@ p {
   }
 
   h1 {
-    max-width: 100%;
-    font-size: clamp(31px, 9.5vw, 42px);
-    line-height: 1.04;
-    letter-spacing: -1.4px;
-  }
+  max-width: 100%;
+  font-size: clamp(24px, 7vw, 34px);
+  line-height: 1.08;
+  letter-spacing: -0.8px;
+
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
 
   h2 {
     font-size: clamp(27px, 8vw, 36px);
