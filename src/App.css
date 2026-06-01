@@ -919,4 +919,20 @@ p {
     letter-spacing: 4px;
     animation: none;
   }
+  .hero-photo {
+  width: 100%;
+  max-width: 560px;
+  height: 620px;
+  object-fit: cover;
+
+  border-radius: 32px;
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.45),
+    0 0 40px rgba(255,122,26,.15);
+
+  display: block;
+}
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
 import "./App.css";
+import heroGal from "./assets/hero_gal.jpeg";
 
 const services = [
   {
@@ -146,9 +147,9 @@ function Home() {
           </div>
         </div>
 
-        <div className="hero-visual">
-          <ImagePlaceholder text="Hero bilde" />
-        </div>
+        <div className="hero-image">
+  <img src={heroGal} alt="JK Cutting Services" />
+</div>
       </section>
 
       <section className="section">
