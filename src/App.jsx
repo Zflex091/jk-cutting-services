@@ -10,6 +10,15 @@ import metallkutting5 from "./assets/metalkutting5.jpeg";
 import metallkutting7 from "./assets/metallkuting7.jpeg";
 import metallkutting8 from "./assets/metalkutting8.jpeg";
 
+import img1 from "./assets/1.jpg";
+import img2 from "./assets/2.jpg";
+import img3 from "./assets/3.jpg";
+import img4 from "./assets/4.jpg";
+import img5 from "./assets/5.jpg";
+import img6 from "./assets/6.jpg";
+import img7 from "./assets/7.jpg";
+import img8 from "./assets/8.jpg";
+
 const services = [
   {
     title: "Gasskjæring",
@@ -43,28 +52,30 @@ const galleryCategories = {
     title: "Industridemontering",
     text: "Cisterner, tanker, industrielle objekter, større prosjekter og krevende demonteringsarbeid.",
     items: [
-      { title: "Cisterner og tanker" },
-      { title: "Industrielle objekter" },
-      { title: "Større prosjekter" },
-      { title: "Demontering 04" },
-      { title: "Demontering 05" },
-      { title: "Demontering 06" },
+      { title: "Cisterner og tanker", image: img1 },
+      { title: "Industrielle objekter", image: img2 },
+      { title: "Større prosjekter", image: img3 },
+      { title: "Arbeidsprosess", image: img4 },
+      { title: "Teknikk", image: img5 },
+      { title: "Industridemontering", image: img6 },
+      { title: "Prosjekt 07", image: img7 },
+      { title: "Prosjekt 08", image: img8 },
     ],
   },
 
- metallkutting: {
-  title: "Metallkutting på gjenvinningsanlegg",
-  text: "Metallkutting, klargjøring av konstruksjoner, arbeidsprosesser og maskiner på gjenvinningsanlegg.",
-  items: [
-    { title: "Metallkutting 01", image: metallkutting1 },
-    { title: "Metallkutting 02", image: metallkutting2 },
-    { title: "Metallkutting 03", image: metallkutting3 },
-    { title: "Metallkutting 04", image: metallkutting4 },
-    { title: "Metallkutting 05", image: metallkutting5 },
-    { title: "Metallkutting 07", image: metallkutting7 },
-    { title: "Metallkutting 08", image: metallkutting8 },
-  ],
-},
+  metallkutting: {
+    title: "Metallkutting på gjenvinningsanlegg",
+    text: "Metallkutting, klargjøring av konstruksjoner, arbeidsprosesser og maskiner på gjenvinningsanlegg.",
+    items: [
+      { title: "Metallkutting 01", image: metallkutting1 },
+      { title: "Metallkutting 02", image: metallkutting2 },
+      { title: "Metallkutting 03", image: metallkutting3 },
+      { title: "Metallkutting 04", image: metallkutting4 },
+      { title: "Metallkutting 05", image: metallkutting5 },
+      { title: "Metallkutting 07", image: metallkutting7 },
+      { title: "Metallkutting 08", image: metallkutting8 },
+    ],
+  },
 };
 
 function Header() {
@@ -325,16 +336,16 @@ function Gallery() {
         </div>
 
         <div className="gallery-grid">
-  {category.items.map((item) => (
-    <div className="gallery-item" key={item.title}>
-      {item.image ? (
-        <img src={item.image} alt={item.title} />
-      ) : (
-        <span>{item.title}</span>
-      )}
-    </div>
-  ))}
-</div>
+          {category.items.map((item) => (
+            <div className="gallery-item" key={item.title}>
+              {item.image ? (
+                <img src={item.image} alt={item.title} />
+              ) : (
+                <span>{item.title}</span>
+              )}
+            </div>
+          ))}
+        </div>
       </section>
     </main>
   );
